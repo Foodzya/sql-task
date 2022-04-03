@@ -1,13 +1,13 @@
-create function product_name (p_id int)
+create function brand_name (b_id int)
 	returns text
 	language plpgsql
 	as
 $$
 declare 
-	p_name text;
+	b_name text;
 begin
-	SELECT p.name INTO p_name FROM product p WHERE p.id = p_id;
-	return p_name;
+	SELECT b.name INTO b_name FROM brand b WHERE b.id = b_id;
+	return b_name;
 end;
 $$
 

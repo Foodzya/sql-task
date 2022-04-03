@@ -14,7 +14,7 @@ $$
 CREATE VIEW product_review AS
 SELECT r.rating, r.comment, ua.* FROM review r
 	INNER JOIN product p ON p.id = r.product_id
-	INNER JOIN userAccount ua ON r.userAccount_id = ua.id
+	INNER JOIN user_account ua ON r.user_id = ua.id
 WHERE p.name = product_name(6);
 
 SELECT * FROM product_review;

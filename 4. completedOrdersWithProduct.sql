@@ -11,8 +11,8 @@ begin
 end;
 $$
 
-SELECT co.*, p.name FROM customerOrder co
-	INNER JOIN product_customerOrder p_co ON co.id = p_co.customerOrder_id
+SELECT co.*, p.name FROM customer_order co
+	INNER JOIN product_customer_order p_co ON co.id = p_co.order_id
 	INNER JOIN product p ON p_co.product_id = p.id
 WHERE co.status = 'Completed'  AND p.name = product_name(6)
 ORDER BY co.modifiedDate DESC;
